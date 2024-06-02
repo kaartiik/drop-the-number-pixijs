@@ -1,0 +1,135 @@
+{
+	"frames": {
+		"Tool1.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 3543,
+				"h": 3543
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 3543,
+				"h": 3543
+			},
+			"sourceSize": {
+				"w": 3543,
+				"h": 3543
+			}
+		},
+		"Tool2.png": {
+			"frame": {
+				"x": 3546,
+				"y": 1,
+				"w": 3543,
+				"h": 3543
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 3543,
+				"h": 3543
+			},
+			"sourceSize": {
+				"w": 3543,
+				"h": 3543
+			}
+		},
+		"Tool3.png": {
+			"frame": {
+				"x": 1,
+				"y": 3546,
+				"w": 3543,
+				"h": 3543
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 3543,
+				"h": 3543
+			},
+			"sourceSize": {
+				"w": 3543,
+				"h": 3543
+			}
+		},
+		"Tool4.png": {
+			"frame": {
+				"x": 3546,
+				"y": 3546,
+				"w": 3543,
+				"h": 3543
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 3543,
+				"h": 3543
+			},
+			"sourceSize": {
+				"w": 3543,
+				"h": 3543
+			}
+		},
+		"Tool5.png": {
+			"frame": {
+				"x": 7091,
+				"y": 1,
+				"w": 3543,
+				"h": 3543
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 3543,
+				"h": 3543
+			},
+			"sourceSize": {
+				"w": 3543,
+				"h": 3543
+			}
+		},
+		"Tool6.png": {
+			"frame": {
+				"x": 7091,
+				"y": 3546,
+				"w": 3543,
+				"h": 3543
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 3543,
+				"h": 3543
+			},
+			"sourceSize": {
+				"w": 3543,
+				"h": 3543
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "character_tools.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 10635,
+			"h": 7090
+		},
+		"scale": "1"
+	}
+}

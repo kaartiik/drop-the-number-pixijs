@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048 Blast Off</title>
+    <script src="./node_modules/pixi.js/dist/browser/pixi.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="./js/grid.js"></script>
+    <script src="./js/numbertile.js"></script>
+    <script src="./js/powerUps/ufopowerup.js"></script>
+    <script src="./js/powerUps/thunderCloudPowerUp.js"></script>
+    <script src="./js/powerUps/lightbulbPowerUp.js"></script>
+    <script src="./js/powerUps/powerUpTimer.js"></script>
+    <script src="./js/recurringTimer.js"></script>
+    <script src="./js/toon.js"></script>
+    <script src="./js/smokepuff.js"></script>
+    <script type="module" src="./js/script.js"></script>
+
+    <div class="bodyRelativeDiv">
+      <!-- Contains in-game top menu -->
+      <div class="topMenuContainer">
+        <div class="topMenuInnerContainer">
+          <div
+            style="
+              width: 30%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            "
+          >
+            <button id="gameVolume">
+              <img
+                src="./images/game_assets/button_sound_ON.png"
+                class="volumepausebtn"
+              />
+            </button>
+            <input type="range" id="volumeControl" min="0" max="100" step="5" />
+          </div>
+
+          <button id="gameMute" class="volumepausebtnContainer">
+            <img
+              src="./images/game_assets/button_sound_ON.png"
+              id="gameMuteImg"
+              class="volumepausebtn"
+            />
+          </button>
+          <button id="gamePause" class="volumepausebtnContainer">
+            <img
+              src="./images/game_assets/button_pause.png"
+              class="volumepausebtn"
+            />
+          </button>
+        </div>
+        <div class="timercontainer">
+          <h1 id="timer" class="scoretimertext">0</h1>
+        </div>
+
+        <div class="scorecontainer">
+          <h1 id="score" class="scoretimertext">0</h1>
+        </div>
+      </div>
+
+      <div id="canvas">
+        <div id="landingPage">
+          <div class="landingPageInnerContainer">
+            <img
+              src="./images/startscreen_assets/startscreen_star.png"
+              id="star1"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_star.png"
+              id="star2"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_star.png"
+              id="star3"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_star.png"
+              id="star4"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_asteroid_1.png"
+              id="asteroid1"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_asteroid_2.png"
+              id="asteroid2"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_asteroid_3.png"
+              id="asteroid3"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_balloon_1.png"
+              id="balloon1"
+              class="balloon"
+            />
+            <img
+              src="./images/startscreen_assets/startscreen_balloon_2.png"
+              id="balloon2"
+              class="balloon"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_balloon_3.png"
+              id="balloon3"
+              class="balloon"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_cloud_1.png"
+              id="cloud1"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_cloud_2.png"
+              id="cloud2"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_cloud_3.png"
+              id="cloud3"
+            />
+
+            <img
+              src="./images/startscreen_assets/startscreen_logo.png"
+              class="landingLogo"
+            />
+
+            <button id="landingStart" class="landingBtn">
+              <img
+                src="./images/startscreen_assets/startscreen_button_resume.png"
+                class="landingBtnImage"
+              />
+            </button>
+
+            <button id="landingHowTo" class="landingBtn">
+              <img
+                src="./images/startscreen_assets/startscreen_button_restart.png"
+                class="landingBtnImage"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div id="overlay">
+          <div class="landingPageInnerContainer">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <button id="menuResume" class="pauseMenuBtn">
+                <img
+                  src="./images/menus/menu_button_resume.png"
+                  class="btnImage"
+                />
+              </button>
+
+              <button id="menuRestart" class="pauseMenuBtn">
+                <img
+                  src="./images/menus/menu_button_restart.png"
+                  class="btnImage"
+                />
+              </button>
+
+              <button id="menuExit" class="pauseMenuBtn">
+                <img
+                  src="./images/menus/menu_button_exit.png"
+                  class="btnImage"
+                />
+              </button>
+
+              <button id="menuExitX" class="pauseMenuBtnX">
+                <img
+                  src="./images/menus/button_pause_x.png"
+                  class="btnImageX"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="gameOverOverlay">
+          <div class="landingPageInnerContainer">
+            <!-- Modal content -->
+            <div class="gameOverModalContent">
+              <img src="./images/menus/end_congrats.png" class="congratsImg" />
+              <h1 class="finalScoreText">You've travelled</h1>
+              <h1 id="finalScore" class="finalScoreText">0</h1>
+              <h1 class="finalScoreText">miles</h1>
+              <button id="gameOverPlayAgain" class="playAgainBtn">
+                <img
+                  src="./images/menus/button_end_playAgain.png"
+                  class="playAgainBtnImg"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="gameOverTextOverlay">
+          <div class="landingPageInnerContainer">
+            <h1 id="gameOverText">Game Over</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

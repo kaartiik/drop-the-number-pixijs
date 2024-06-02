@@ -1,0 +1,592 @@
+body {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.bodyRelativeDiv {
+  position: relative;
+}
+#id {
+  align-items: center;
+  justify-content: center;
+}
+@font-face {
+  font-family: DefaultFont;
+  font-weight: bold;
+  src: url('./fonts/Glow\ Gothic\ BF\ W01\ Overlay.otf');
+}
+
+#landingPage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  background-image: url('./images/startscreen_assets/startscreen_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: block; /* Display by default */
+  z-index: 2;
+
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+.landingPageInnerContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.landingLogo {
+  height: 30%;
+  width: auto;
+  margin-bottom: 30%;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+#star1 {
+  position: absolute;
+  height: 3%;
+  left: 5%;
+  top: 12%;
+  animation: blinker 3s linear infinite;
+}
+#star2 {
+  position: absolute;
+  height: 3%;
+  left: 35%;
+  top: 1%;
+  animation: blinker 2s linear infinite;
+}
+
+#star3 {
+  position: absolute;
+  height: 3%;
+  right: 18%;
+  top: 14%;
+  animation: blinker 3.5s linear infinite;
+}
+
+#star4 {
+  position: absolute;
+  height: 3%;
+  right: 8%;
+  top: 25%;
+  animation: blinker 1.5s linear infinite;
+}
+
+#asteroid1 {
+  position: absolute;
+  height: 3%;
+  left: 1%;
+  top: 27%;
+}
+
+#asteroid2 {
+  position: absolute;
+  height: 3%;
+  right: 10%;
+  top: 12%;
+}
+
+#asteroid3 {
+  position: absolute;
+  height: 3%;
+  right: 6%;
+  top: 20%;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+.balloon {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+#balloon1 {
+  position: absolute;
+  height: 12%;
+  left: 15%;
+  top: 58%;
+}
+#balloon2 {
+  position: absolute;
+  height: 18%;
+  right: 5%;
+  top: 33%;
+}
+#balloon3 {
+  position: absolute;
+  height: 18%;
+  left: 5%;
+  top: 18%;
+}
+
+#cloud1 {
+  position: absolute;
+  height: 10%;
+  left: 5%;
+  top: 35%;
+  z-index: -1;
+}
+#cloud2 {
+  position: absolute;
+  height: 10%;
+  left: auto;
+  right: auto;
+  top: 36%;
+  z-index: -1;
+}
+#cloud3 {
+  position: absolute;
+  height: 10%;
+  right: 5%;
+  top: 38%;
+  z-index: -1;
+}
+.landingBtn {
+  margin-bottom: 10%;
+  height: 10%;
+  width: auto;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.landingBtnImage {
+  height: auto;
+  width: 40%;
+}
+.topMenuContainer {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.topMenuInnerContainer {
+  display: flex;
+  width: 30%;
+  flex-direction: row;
+  align-items: center;
+}
+.scorecontainer {
+  background-image: url('./images/game_assets/tablet_Score.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: auto;
+  width: 23%;
+
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+#score {
+  -webkit-text-stroke: 2px #975923;
+  font-family: DefaultFont, sans-serif;
+}
+.timercontainer {
+  background-image: url('./images/game_assets/tablet_Timer.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: auto;
+  width: 23%;
+
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+#timer {
+  -webkit-text-stroke: 2px #975923;
+  font-family: DefaultFont, sans-serif;
+}
+.scoretimerbg {
+  height: 5%;
+}
+.scoretimertext {
+  font-size: 2vh;
+  text-align: center;
+  color: white;
+}
+#gameVolume {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  height: auto;
+  width: 100%;
+  z-index: 1;
+}
+/* #volumeControl {
+  position: absolute;
+  top: 65%;
+  -webkit-appearance: slider-vertical;
+  background: #f88b09;
+} */
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #volumeControl {
+    position: absolute;
+    z-index: 0;
+    bottom: -80%;
+    overflow: hidden;
+    width: 80px;
+    -webkit-appearance: none;
+    border-radius: 20px;
+    background-color: #fed7a0;
+    transform: rotate(270deg);
+    display: none;
+  }
+
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #fed7a0;
+    margin-top: -1px;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 1px;
+    background: none;
+    box-shadow: -80px 0 0 80px #f88b09;
+    cursor: pointer;
+  }
+}
+/** FF*/
+input[type='range']::-moz-range-progress {
+  background-color: #f88b09;
+}
+input[type='range']::-moz-range-track {
+  background-color: #fed7a0;
+}
+/* IE*/
+input[type='range']::-ms-fill-lower {
+  background-color: #f88b09;
+}
+input[type='range']::-ms-fill-upper {
+  background-color: #fed7a0;
+}
+.volumepausebtnContainer {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  height: auto;
+  width: 30%;
+}
+.volumepausebtn {
+  height: auto;
+  width: 100%;
+}
+#overlay {
+  height: 100%;
+  width: 100%;
+  color: black;
+  position: absolute;
+
+  display: none; /* Hidden by default */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+/* Modal Content/Box */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* justify-items: center; */
+
+  height: 60%;
+  width: auto;
+
+  background-image: url('./images/menus/pause_menu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+.pauseMenuBtn {
+  margin-bottom: 5%;
+  height: auto;
+  width: 45%;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.pauseMenuBtnX {
+  position: absolute;
+  right: 5%;
+  bottom: 15%;
+  margin-bottom: 10%;
+  height: auto;
+  width: 25%;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/*For mobile*/
+@media screen and (max-width: 780px) {
+  .pauseMenuBtn {
+    margin-bottom: 5%;
+    height: auto;
+    width: 45%;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .pauseMenuBtnX {
+    position: absolute;
+    right: 5%;
+    bottom: 15%;
+    margin-bottom: 10%;
+    height: auto;
+    width: 25%;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+.btnImage {
+  height: 100%;
+  width: 100%;
+}
+
+.btnImageX {
+  height: 100%;
+  width: 100%;
+}
+
+.pauseMenuBtn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#gameOverOverlay {
+  height: 100%;
+  width: 100%;
+  color: black;
+  position: absolute;
+
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+
+  display: none; /* Hidden by default */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+.gameOverModalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 40%;
+  width: 80%;
+
+  /* background-color: turquoise; */
+  background-image: url('./images/menus/end_menu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.congratsImg {
+  height: auto;
+  width: 80%;
+  position: absolute;
+  top: 30%;
+  right: auto;
+  left: auto;
+  background-color: transparent;
+  border: 0;
+}
+
+.finalScoreText {
+  -webkit-text-stroke: 2.5px #975923;
+  font-family: DefaultFont, sans-serif;
+  font-size: 30;
+  color: #fff;
+  letter-spacing: -3px;
+  margin: 10px 0px;
+}
+
+.playAgainBtn {
+  position: absolute;
+  bottom: 32%;
+  right: auto;
+  left: auto;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 8%;
+  width: auto;
+}
+
+.playAgainBtnImg {
+  height: 100%;
+  width: 100%;
+}
+
+/*For mobile*/
+@media screen and (max-width: 780px) {
+  .congratsImg {
+    height: auto;
+    width: 80%;
+    position: absolute;
+    top: 24%;
+    right: auto;
+    left: auto;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .playAgainBtn {
+    position: absolute;
+    bottom: 28%;
+    right: auto;
+    left: auto;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    height: 8%;
+    width: 40%;
+  }
+}
+
+#gameOverTextOverlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+
+  display: none; /* Hidden by default */
+  z-index: 2;
+
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+#gameOverText {
+  -webkit-text-stroke: 2.5px #975923;
+  font-family: DefaultFont, sans-serif;
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: -3px;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .congratsImg {
+    height: auto;
+    width: 80%;
+    position: absolute;
+    top: 28%;
+    right: auto;
+    left: auto;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .playAgainBtn {
+    position: absolute;
+    bottom: 29%;
+    right: auto;
+    left: auto;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+}

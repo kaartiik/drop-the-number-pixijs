@@ -1,0 +1,55 @@
+{
+  "frames": {
+    "smoke_puff_01.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 907,
+        "h": 723
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 907,
+        "h": 723
+      },
+      "sourceSize": {
+        "w": 907,
+        "h": 723
+      }
+    },
+    "smoke_puff_02.png": {
+      "frame": {
+        "x": 910,
+        "y": 1,
+        "w": 765,
+        "h": 750
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 765,
+        "h": 750
+      },
+      "sourceSize": {
+        "w": 765,
+        "h": 750
+      }
+    }
+  },
+  "meta": {
+    "app": "http://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "spritesheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1676,
+      "h": 752
+    },
+    "scale": "1"
+  }
+}
